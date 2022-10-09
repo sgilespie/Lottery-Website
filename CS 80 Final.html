@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<audio controls>
+
+<source src="money.mp3" type="audio/mpeg">
+
+</audio>
+</body>
+
+<style type="text/css">
+
+  
+  #glitter {
+    position: relative;
+    top: -2px;
+    height: 400px;
+    background: #0c0440 url(glitter.jpg);
+    color: #000000;
+  }
+
+
+
+  div.money {
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    -webkit-transition: 3s ease-in;
+    -moz-transition: 3s ease-in;
+    -o-transition: 3s ease-in;
+    transition: 3s ease-in;
+  }
+  div.money div {
+    width: 300px;
+    height: 300px;
+    background: url(dollarsign.png) no-repeat;
+    -ms-transform: scale(width,height); 
+    -webkit-transform: scale(width,height); 
+    transform: scale(width, height);
+    -ms-transform: scale(0.3,0.3); 
+    -webkit-transform: scale(0.3,0.3); 
+    transform: scale(0.3,0.3);
+    -webkit-transition: 2s ease-in-out;
+    -moz-transition: 2s ease-in-out;
+    -o-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
+  }
+
+ 
+  #glitter:hover div.money {
+    -webkit-transform: translate(1500px,-80px);
+    -moz-transform: translate(1500px,-80px);
+    -o-transform: translate(1500px,-80px);
+    -ms-transform: translate(1500px,-80px);
+    transform: translate(1500px,-80px);
+  }
+  #glitter:hover div.money div {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+
+ .box {
+  position: absolute;
+  top: -2px,50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #000000;
+  color: gold;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+h2 
+{
+  
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.bottomtext {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 20px;
+  
+}
+.object {
+  animation: MoveUpDown 1s linear infinite;
+  position: absolute;
+  left: 350px;
+  bottom: 350px;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 20px;
+  }
+}
+
+
+</style>
+
+<div id="glitter">
+<div class="money">
+<div><!-- $500,000,000 --></div>
+<strong><font size="+2">.$5,000,000!!!</strong></font>
+</div>
+
+<div class="object">
+<strong><font size="+2">$Be the Special One to Win 500 Million dollars!$</font>
+</div>
+
+<h2>Guess Em' All Lottery!</h2>
+<div class="bottomtext"><strong>How many guesses will it take to win?</strong></div>
+
+</body>
+</html>
+
+
+<div class="box"> 
+    <label for="guessField">Try Guessing! </label> 
+    <input type = "text" id = "guessField" class = "guessField"> 
+    <input type = "submit" value = "Submit Guess" 
+           class = "guessSubmit" id = "submitguess"> 
+</div> 
+
+
+<script type = "text/javascript"> 
+
+  
+
+  
+    // random value generated 
+    var y = Math.floor(Math.random() * 10 + 1); 
+      
+    // counting the number of guesses 
+    // made for correct Guess 
+    var guess = 1; 
+
+
+      
+    document.getElementById("submitguess").onclick = function(){ 
+    
+   
+        
+    var x = document.getElementById("guessField").value; 
+    
+  
+    
+   
+   if(x == y) 
+   {   
+       
+    alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
+               + guess + " GUESSES! YOU WIN 500,000,000 DOLLARS!" ); 
+   
+   } 
+   else if(x > y)  
+   {     
+       guess++; 
+       alert("SORRY INCORRECT!! TRY A SMALLER NUMBER"); 
+   } 
+   else
+   { 
+       guess++; 
+       alert("SORRY INCORRECT!! TRY A GREATER NUMBER"); 
+   } 
+} 
+</script> 
+</body> 
+</html>
